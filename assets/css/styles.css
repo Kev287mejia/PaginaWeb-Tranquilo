@@ -354,7 +354,7 @@ p {
 }
 
 .gallery__item--friends {
-    background-position: center 10%; /* Shift up to protect friends' foreheads from header/logo overlap */
+    background-position: center 0%; /* Subido al 0% (top) para que las caras del puro queden totalmente visibles arriba en desktop */
 }
 
 .gallery__item--lounge {
@@ -368,7 +368,7 @@ p {
     }
     
     .gallery__item--friends {
-        background-position: center 5%; /* Sube mucho más en móvil para alejar los rostros del logo central */
+        background-position: center 0%; /* Subido al 0% (top) en móvil también para librar los rostros por completo */
     }
     
     .gallery__item--lounge {
