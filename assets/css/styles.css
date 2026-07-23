@@ -347,13 +347,17 @@ p {
     opacity: 1;
 }
 
-/* Portrait images: show complete without zoom crop */
-.gallery__item--portrait,
-.menu-hero__bg--portrait {
-    background-size: contain;
-    background-repeat: no-repeat;
+/* Specific alignments for hero items to prevent facial/forehead crops */
+.gallery__item--chef {
+    background-position: center 30%; /* Shift up to keep chef's face and prep table in perfect view */
+}
+
+.gallery__item--friends {
+    background-position: center 25%; /* Shift up to protect friends' foreheads from header overlap */
+}
+
+.gallery__item--lounge {
     background-position: center center;
-    background-color: #000;
 }
 
 .hero__overlay {
