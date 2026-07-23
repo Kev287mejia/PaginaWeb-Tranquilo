@@ -403,14 +403,16 @@ p {
     text-align: center;
     padding: 0 1rem;
     max-width: 800px;
+    margin-top: 0;
     margin-bottom: 18vh; /* posicion por defecto (para slide 0: el chef) */
-    transition: margin-bottom 0.8s ease-in-out; /* transicion suave al alternar */
+    transition: margin-top 0.8s ease-in-out, margin-bottom 0.8s ease-in-out; /* transicion suave al alternar */
 }
 
-/* Slide 1 (Lounge) y Slide 2 (Friends/El Puro): baja el logo para no tapar los rostros y el espacio central */
+/* Slide 1 (Lounge) y Slide 2 (Friends/El Puro): baja el logo al pie del hero (casi al final de la pantalla) */
 .hero--slide-1 .hero__content,
 .hero--slide-2 .hero__content {
-    margin-bottom: 2vh;
+    margin-top: 35vh; /* empuja el logo hacia abajo para dejarlo al pie del banner */
+    margin-bottom: 0;
 }
 
 .hero__emblem-img {
