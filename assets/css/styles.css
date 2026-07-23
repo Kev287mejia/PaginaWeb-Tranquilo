@@ -354,7 +354,7 @@ p {
 }
 
 .gallery__item--friends {
-    background-position: center 0%; /* Subido al 0% (top) para que las caras del puro queden totalmente visibles arriba en desktop */
+    background-position: center 50%; /* Ajustado al 50% para empujar el encuadre y bajar los rostros del logotipo central */
 }
 
 .gallery__item--lounge {
@@ -368,7 +368,7 @@ p {
     }
     
     .gallery__item--friends {
-        background-position: center 0%; /* Subido al 0% (top) en móvil también para librar los rostros por completo */
+        background-position: center 45%; /* Ajustado al 45% en móvil */
     }
     
     .gallery__item--lounge {
