@@ -338,7 +338,6 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: var(--bg-img);
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -377,38 +376,6 @@ p {
     }
 }
 
-/* Efecto Letterbox desenfocado para Desktop */
-@media (min-width: 992px) {
-    .gallery__item {
-        background-image: none; /* el propio div ya no pinta nada directo en desktop */
-    }
-
-    .gallery__item::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-image: var(--bg-img);
-        background-size: cover;
-        background-position: center;
-        filter: blur(25px) brightness(0.4);
-        transform: scale(1.15); /* evita ver bordes borrosos del blur */
-        z-index: 1;
-    }
-
-    .gallery__item::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-image: var(--bg-img);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: 2;
-    }
-}
-
 .hero__overlay {
     position: absolute;
     top: 0;
@@ -417,6 +384,17 @@ p {
     height: 100%;
     background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
     z-index: 2;
+}
+
+.hero__bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+    z-index: 3;
+    pointer-events: none; /* no bloquea clics en el botón "Ver el Menú" */
 }
 
 .hero__content {
