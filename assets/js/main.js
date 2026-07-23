@@ -38,10 +38,19 @@ function initHeaderScroll() {
  */
 function initHeroSlideshow() {
     const slides = document.querySelectorAll(".gallery__item");
-    if (slides.length <= 1) return;
+    const heroSection = document.getElementById("hero");
+    if (slides.length <= 1 || !heroSection) return;
 
     let currentIndex = 0;
     const intervalTime = 6000; // 6 seconds per slide
+
+    const updateHeroClass = () => {
+        // Quita clases anteriores de slide y agrega la actual
+        heroSection.className = heroSection.className.replace(/\bhero--slide-\d+\b/g, '').trim();
+        heroSection.classList.add(`hero--slide-${currentIndex}`);
+    };
+
+    updateHeroClass(); // Estado inicial
 
     setInterval(() => {
         // Remove active class from current slide
@@ -52,6 +61,7 @@ function initHeroSlideshow() {
 
         // Add active class to next slide
         slides[currentIndex].classList.add("active");
+        updateHeroClass();
     }, intervalTime);
 }
 
