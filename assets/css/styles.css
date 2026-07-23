@@ -377,7 +377,7 @@ p {
     text-align: center;
     padding: 0 1rem;
     max-width: 800px;
-    margin-bottom: 8vh; /* sube el bloque un poco sobre el centro para evitar solapar caras */
+    margin-bottom: 18vh; /* sube el logo sobre el centro para no interrumpir los rostros */
 }
 
 .hero__emblem-img {
