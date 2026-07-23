@@ -344,6 +344,18 @@ p {
     transition: opacity 1.5s ease-in-out;
 }
 
+.gallery__item-foreground {
+    display: none; /* Oculto en movil/tablet por defecto, se usa solo cover en el elemento padre */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: inherit;
+    background-repeat: no-repeat;
+}
+
 .gallery__item.active {
     opacity: 1;
 }
@@ -373,6 +385,23 @@ p {
     
     .gallery__item--lounge {
         background-position: center 40%; /* Ajuste sutil para encuadrar la mejor zona del salón */
+    }
+}
+
+/* Efecto Letterbox desenfocado para Desktop (pantallas grandes donde se corta horizontalmente) */
+@media (min-width: 992px) {
+    .gallery__item {
+        /* El fondo se escala un poco y se desenfoca */
+        filter: blur(25px) brightness(0.4);
+        transform: scale(1.08); /* Evita bordes blancos del blur */
+    }
+    
+    .gallery__item-foreground {
+        display: block; /* Activamos el primer plano en pantallas grandes */
+        background-size: contain; /* Ajusta la foto completa vertical sin recortar */
+        background-position: center center;
+        filter: none; /* Mantiene la nitidez */
+        transform: scale(1);
     }
 }
 
