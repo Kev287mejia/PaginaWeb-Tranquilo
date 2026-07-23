@@ -28,24 +28,12 @@
    2. ROOT VARIABLES & RESET
    -------------------------------------------------------------------------- */
 :root {
-    /* Core palette – inspired by high-contrast B&W fine dining */
-    --color-black: #0b0b0b;           /* Near-black instead of pure black: gentler on eyes */
-    --color-white: #f7f7f5;           /* Pure white for primary text */
-    --color-white-dim: rgba(247, 247, 245, 0.55); /* Muted white for secondary text */
-    --color-white-faint: rgba(247, 247, 245, 0.12); /* Hairline borders, dividers */
-
-    /* Keep cream ONLY as accent for special elements (emblem, borders) */
-    --color-cream: #f7f7f5;           /* Unified to white-family */
-    --color-cream-dim: rgba(247, 247, 245, 0.55);
-
-    /* Gold: accent role only — lines, icons, price tags, thin dividers */
-    --color-gold: #b8913a;            /* Slightly darker/less saturated gold for subtlety */
-    --color-gold-faint: rgba(184, 145, 58, 0.25); /* For hover states, faint glow */
-
-    --color-dark-grey: #141414;       /* Section alt background */
-    --color-mid-grey: #2a2a2a;        /* Subtle borders, form backgrounds */
-    --color-border: rgba(247, 247, 245, 0.18); /* Universal hairline border */
-
+    --color-black: #0a0a0a;
+    --color-cream: #f7f7f5;
+    --color-cream-dim: rgba(247, 247, 245, 0.68);
+    --color-gold: #a68a5b;
+    --color-dark-grey: #1a1a1a;
+    --color-border: #c6c6c6;
     --font-body: "Resamitz", "Georgia", serif;
     --font-heading-med: "Catorze 27 Medium", "Times New Roman", serif;
     --font-heading-blk: "Catorze 27 Black", "Times New Roman", serif;
@@ -63,12 +51,12 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: var(--color-black);
-    color: var(--color-white);
+    color: var(--color-cream);
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.5;
     font-weight: 200;
-    letter-spacing: 0.8px;  /* Slightly more airy, Dante-style */
+    letter-spacing: 0.5px;
     overflow-x: hidden;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -108,40 +96,33 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading-med);
     font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 4px; /* Fine, spaced-out serif — Dante style */
+    letter-spacing: 3px;
 }
 
 h2 {
-    font-size: 1.7rem;   /* Contained, not dominant */
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
-    letter-spacing: 5px;
-}
-
-h3 {
-    font-size: 1.1rem;
-    letter-spacing: 4px;
+    font-size: 1.9rem;
+    line-height: 1.3;
+    margin-bottom: 1.75rem;
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.75;   /* Generous line-height for fine-dining feel */
+    font-size: 1.05rem;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
-    color: var(--color-white-dim);
-    letter-spacing: 0.6px;
+    color: var(--color-cream-dim);
 }
 
-/* Buttons — outline-only, Dante-inspired minimal style */
+/* Buttons */
 .btn {
     display: inline-block;
     font-family: var(--font-heading-med);
-    font-size: 0.75rem;         /* Smaller text, more refined */
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 3.5px;
-    padding: 13px 34px;
-    border: 1px solid rgba(247, 247, 245, 0.5);  /* Hairline border */
-    background: transparent;    /* Always transparent — no fill */
-    color: var(--color-white);
+    letter-spacing: 2px;
+    padding: 12px 30px;
+    border: 1px solid var(--color-cream);
+    background: transparent;
+    color: var(--color-cream);
     cursor: pointer;
     transition: var(--transition-smooth);
     position: relative;
@@ -150,35 +131,33 @@ p {
 }
 
 .btn:hover {
-    border-color: var(--color-white);
-    background: rgba(247, 247, 245, 0.06); /* Barely-there tint on hover */
-    letter-spacing: 4.5px;      /* Expand on hover for tactile feel */
-    color: var(--color-white);
+    background-color: var(--color-cream);
+    color: var(--color-black);
+    letter-spacing: 3px;
 }
 
-/* btn-outline is now the DEFAULT style — keep for legacy HTML */
 .btn-outline {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
 }
 
 .btn-location {
     display: inline-block;
     font-family: var(--font-heading-med);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    padding: 9px 22px;
-    border: 1px solid rgba(247, 247, 245, 0.4);
+    letter-spacing: 1.5px;
+    padding: 8px 20px;
+    border: 1px solid var(--color-cream);
     background: transparent;
-    color: var(--color-white);
+    color: var(--color-cream);
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
 .btn-location:hover {
-    border-color: var(--color-white);
-    background: rgba(247, 247, 245, 0.06);
-    color: var(--color-white);
+    background-color: var(--color-cream);
+    color: var(--color-black);
 }
 
 /* Screen reader only utility */
@@ -212,7 +191,7 @@ p {
 .site-header.collapsed {
     padding: 1rem 2rem;
     background: var(--color-black);
-    border-bottom: 1px solid rgba(244, 234, 219, 0.15);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.15);
     box-shadow: 0 4px 30px rgba(0,0,0,0.8);
 }
 
@@ -371,15 +350,15 @@ p {
 
 /* Specific alignments for hero items to prevent facial/forehead crops */
 .gallery__item--chef {
-    background-position: center 30% !important; /* Shift up to keep chef's face and prep table in perfect view */
+    background-position: center 30%; /* Shift up to keep chef's face and prep table in perfect view */
 }
 
 .gallery__item--friends {
-    background-position: center 25% !important; /* Shift up to protect friends' foreheads from header overlap */
+    background-position: center 25%; /* Shift up to protect friends' foreheads from header overlap */
 }
 
 .gallery__item--lounge {
-    background-position: center center !important;
+    background-position: center center;
 }
 
 .hero__overlay {
@@ -446,7 +425,7 @@ p {
 .c-two-col__col h2 {
     font-size: 1.5rem;
     letter-spacing: 2px;
-    border-bottom: 1px solid rgba(244, 234, 219, 0.1);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.1);
     padding-bottom: 1.5rem;
 }
 
@@ -575,7 +554,7 @@ p {
 /* Footer styling */
 .site-footer {
     background-color: var(--color-black);
-    border-top: 1px solid rgba(244, 234, 219, 0.1);
+    border-top: 1px solid rgba(247, 247, 245, 0.1);
     color: var(--color-cream-dim);
     padding: 5rem 2rem 2rem;
     font-size: 0.95rem;
@@ -628,7 +607,7 @@ p {
 }
 
 .site-footer-secondary {
-    border-top: 1px solid rgba(244, 234, 219, 0.05);
+    border-top: 1px solid rgba(247, 247, 245, 0.05);
     padding-top: 2rem;
     text-align: center;
     font-size: 0.8rem;
@@ -820,7 +799,7 @@ p {
     justify-content: center;
     gap: 1.5rem;
     margin-bottom: 5rem;
-    border-bottom: 1px solid rgba(244, 234, 219, 0.1);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.1);
     padding-bottom: 1.5rem;
 }
 
@@ -899,7 +878,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1px dotted rgba(244, 234, 219, 0.2);
+    border-bottom: 1px dotted rgba(247, 247, 245, 0.2);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -1035,7 +1014,7 @@ p {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    border: 1px solid rgba(244, 234, 219, 0.1);
+    border: 1px solid rgba(247, 247, 245, 0.1);
     transition: var(--transition-smooth);
 }
 
@@ -1071,7 +1050,7 @@ p {
 .events-form-section {
     padding: 6rem 2rem;
     background-color: var(--color-dark-grey);
-    border-top: 1px solid rgba(244, 234, 219, 0.07);
+    border-top: 1px solid rgba(247, 247, 245, 0.07);
 }
 
 .events-form__container {
@@ -1131,7 +1110,7 @@ p {
 
 .form-input {
     background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(244, 234, 219, 0.2);
+    border: 1px solid rgba(247, 247, 245, 0.2);
     color: var(--color-cream);
     font-family: var(--font-body);
     font-size: 1rem;
@@ -1144,7 +1123,7 @@ p {
 }
 
 .form-input::placeholder {
-    color: rgba(244, 234, 219, 0.3);
+    color: rgba(247, 247, 245, 0.3);
 }
 
 .form-input:focus {
@@ -1154,7 +1133,7 @@ p {
 
 .form-select {
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f4eadb' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f7f7f5' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1.2rem center;
     padding-right: 2.5rem;
@@ -1337,8 +1316,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 340px;
     margin-bottom: 4rem;
     overflow: hidden;
-    border-top: 1px solid rgba(244, 234, 219, 0.06);
-    border-bottom: 1px solid rgba(244, 234, 219, 0.06);
+    border-top: 1px solid rgba(247, 247, 245, 0.06);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.06);
 }
 
 .menu-photo-feature--single {
@@ -1405,7 +1384,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* If body is NOT has-hero-intent, header is always dark */
 body:not(.has-hero-intent) .site-header {
     background: var(--color-black);
-    border-bottom: 1px solid rgba(244, 234, 219, 0.12);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.12);
     padding: 1rem 2rem;
 }
 
@@ -1468,7 +1447,7 @@ body:not(.has-hero-intent) .site-header .site-logo__image {
 
 /* Footer email link */
 .site-footer a[href^="mailto"] {
-    border-bottom: 1px solid rgba(244, 234, 219, 0.2);
+    border-bottom: 1px solid rgba(247, 247, 245, 0.2);
     padding-bottom: 1px;
     transition: var(--transition-fast);
 }
