@@ -354,7 +354,7 @@ p {
 }
 
 .gallery__item--friends {
-    background-position: center 50%; /* Ajustado al 50% para empujar el encuadre y bajar los rostros del logotipo central */
+    background-position: center 18%; /* Ajustado al 18% para subir el encuadre en web y evitar cortar las cabezas/frentes de las muchachas */
 }
 
 .gallery__item--lounge {
