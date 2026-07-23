@@ -361,6 +361,21 @@ p {
     background-position: center center;
 }
 
+/* Mobile adjustments to keep faces perfectly visible when cropped vertically */
+@media (max-width: 768px) {
+    .gallery__item--chef {
+        background-position: center 20%; /* Sube un poco más en móvil para enfocar el rostro */
+    }
+    
+    .gallery__item--friends {
+        background-position: center 15%; /* Sube más para evitar que el menú/logo cubra a las personas */
+    }
+    
+    .gallery__item--lounge {
+        background-position: center 40%; /* Ajuste sutil para encuadrar la mejor zona del salón */
+    }
+}
+
 .hero__overlay {
     position: absolute;
     top: 0;
