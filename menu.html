@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Tranquilo Lounge and Dinner</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="menu-template">
+
+    <!-- 1. FLOATING HEADER & NAVIGATION -->
+    <header class="site-header" id="site-header">
+        <div class="site-header__container">
+            <!-- Brand Logo -->
+            <div class="site-logo">
+                <a href="index.html" class="site-logo__link" id="logo-link">
+                    <img src="assets/images/logo_white.png" alt="Tranquilo" class="site-logo__image">
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation Menu -->
+            <nav class="site-nav">
+                <ul class="site-nav-menu">
+                    <li><a href="index.html" class="site-nav-link">Inicio</a></li>
+                    <li><a href="index.html#story" class="site-nav-link">Historia</a></li>
+                    <li class="active"><a href="menu.html" class="site-nav-link">Menú</a></li>
+                    <li><a href="index.html#celebrate" class="site-nav-link">Eventos</a></li>
+                    <li><a href="#contact" class="site-nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle Hamburger Button -->
+            <button class="nav-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="nav-toggle-btn__line"></span>
+                <span class="nav-toggle-btn__line"></span>
+                <span class="nav-toggle-btn__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="mobile-nav-drawer">
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="site-nav-link">Inicio</a></li>
+            <li><a href="index.html#story" class="site-nav-link">Historia</a></li>
+            <li><a href="menu.html" class="site-nav-link">Menú</a></li>
+            <li><a href="index.html#celebrate" class="site-nav-link">Eventos</a></li>
+            <li><a href="#contact" class="site-nav-link">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- 2. MAIN SITE CONTENT CONTAINER -->
+    <div class="site-content">
+        <main class="site-content__main">
+            <!-- Hero Header for Menu Page - Chef with fire -->
+            <section class="menu-hero">
+                <div class="menu-hero__bg menu-hero__bg--portrait" style="background-image: url('assets/images/hero_chef_fire.jpg');"></div>
+                <div class="menu-hero__overlay"></div>
+                <div class="menu-hero__content">
+                    <h1 class="menu-hero__title">Nuestra Carta</h1>
+                    <p class="menu-hero__subtitle">Sabores pensados para desconectarse</p>
+                </div>
+            </section>
+
+            <!-- Menu Content Section -->
+            <section class="menu-details">
+                <div class="menu-details__container">
+                    <!-- Category Tabs -->
+                    <div class="menu-tabs">
+                        <button class="menu-tab-btn active" data-tab="comida">Comida</button>
+                        <button class="menu-tab-btn" data-tab="bebidas">Bebidas &amp; Cócteles</button>
+                        <button class="menu-tab-btn" data-tab="postres">Postres</button>
+                    </div>
+
+                    <!-- TAB 1: COMIDA -->
+                    <div class="menu-tab-content active" id="comida">
+
+                        <!-- Feature photo for food section -->
+                        <div class="menu-photo-feature">
+                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/food_soup.jpg');"></div>
+                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/hero_chef_fire.jpg'); background-size: contain; background-repeat: no-repeat; background-color: #000;"></div>
+                        </div>
+
+                        <!-- Group 1: Entradas -->
+                        <div class="menu-group">
+                            <h2 class="menu-group__title">Entradas</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Focaccia de la Casa</span>
+                                        <span class="menu-item__price">$8</span>
+                                    </div>
+                                    <p class="menu-item__desc">Pan italiano recién horneado con romero, aceite de oliva virgen extra y sal marina gris.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Carpaccio de Res</span>
+                                        <span class="menu-item__price">$14</span>
+                                    </div>
+                                    <p class="menu-item__desc">Finas láminas de lomo de res, alcaparras baby, arúgula fresca, virutas de parmesano y aderezo de limón.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Burrata &amp; Prosciutto</span>
+                                        <span class="menu-item__price">$16</span>
+                                    </div>
+                                    <p class="menu-item__desc">Cremosa burrata artesanal acompañada de jamón prosciutto di Parma, higos frescos y reducción de balsámico.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Calamares Fritti</span>
+                                        <span class="menu-item__price">$12</span>
+                                    </div>
+                                    <p class="menu-item__desc">Calamares crujientes con un toque de ralladura de limón, servidos con alioli de ajo asado.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider decoration -->
+                        <div class="menu-divider"></div>
+
+                        <!-- Group 2: Fuertes -->
+                        <div class="menu-group">
+                            <h2 class="menu-group__title">Platos Fuertes</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Ribeye a la Parrilla</span>
+                                        <span class="menu-item__price">$34</span>
+                                    </div>
+                                    <p class="menu-item__desc">Corte de ribeye premium de 12oz, sellado a la parrilla, acompañado de papas trufadas y mantequilla de hierbas.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Salmón Sellado</span>
+                                        <span class="menu-item__price">$26</span>
+                                    </div>
+                                    <p class="menu-item__desc">Filete de salmón fresco sobre cama de puré de coliflor trufado, espárragos asados y salsa virgen de tomate.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Pappardelle al Ragú de Ternera</span>
+                                        <span class="menu-item__price">$22</span>
+                                    </div>
+                                    <p class="menu-item__desc">Pasta pappardelle artesanal con ragú de ternera cocido a fuego lento durante 8 horas con vino tinto y romero.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Risotto de Hongos Silvestres</span>
+                                        <span class="menu-item__price">$20</span>
+                                    </div>
+                                    <p class="menu-item__desc">Arroz arborio cremoso con una mezcla de hongos de temporada, aceite de trufa blanca y queso pecorino romano.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: BEBIDAS -->
+                    <div class="menu-tab-content" id="bebidas">
+
+                        <!-- Feature photo for drinks section -->
+                        <div class="menu-photo-feature">
+                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/drink_strawberry.jpg');"></div>
+                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/drink_green.jpg');"></div>
+                        </div>
+
+                        <!-- Group 1: Signature -->
+                        <div class="menu-group">
+                            <h2 class="menu-group__title">Cócteles de Autor</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Tranquilo Spritz</span>
+                                        <span class="menu-item__price">$12</span>
+                                    </div>
+                                    <p class="menu-item__desc">Aperol infusionado con fresas frescas, Prosecco D.O.C., agua con gas premium y rodaja de naranja deshidratada.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Paraíso Mezcal</span>
+                                        <span class="menu-item__price">$14</span>
+                                    </div>
+                                    <p class="menu-item__desc">Mezcal joven artesanal, extracto de piña asada, jarabe de jalapeño casero, zumo de lima y borde de sal de gusano.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Negroni Cocal</span>
+                                        <span class="menu-item__price">$13</span>
+                                    </div>
+                                    <p class="menu-item__desc">Ginebra premium, Campari, vermut dulce macerado con granos de café tostados localmente y cáscara de naranja.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Basil &amp; Gin Smash</span>
+                                        <span class="menu-item__price">$12</span>
+                                    </div>
+                                    <p class="menu-item__desc">Ginebra infusionada con pepino, hojas de albahaca fresca machacadas, zumo de limón real y jarabe simple.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider decoration -->
+                        <div class="menu-divider"></div>
+
+                        <!-- Group 2: Wine / Classics -->
+                        <div class="menu-group">
+                            <h2 class="menu-group__title">Vinos &amp; Cervezas</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Tempranillo, España</span>
+                                        <span class="menu-item__price">$9 / $40</span>
+                                    </div>
+                                    <p class="menu-item__desc">Copa o botella. Notas de frutos rojos maduros, roble sutil y final redondo.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Sauvignon Blanc, Chile</span>
+                                        <span class="menu-item__price">$8 / $36</span>
+                                    </div>
+                                    <p class="menu-item__desc">Copa o botella. Fresco, cítrico, notas de maracuyá y acidez vibrante equilibrada.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Cerveza Artesanal Local</span>
+                                        <span class="menu-item__price">$6</span>
+                                    </div>
+                                    <p class="menu-item__desc">Pregunta a tu mesero por nuestra selección rotativa de cervezas de barril y botella.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: POSTRES -->
+                    <div class="menu-tab-content" id="postres">
+
+                        <!-- Feature photo for desserts section -->
+                        <div class="menu-photo-feature menu-photo-feature--single">
+                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/ambience_friends.jpg');"></div>
+                        </div>
+
+                        <div class="menu-group">
+                            <h2 class="menu-group__title">Postres Especiales</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Tiramisú de la Casa</span>
+                                        <span class="menu-item__price">$8</span>
+                                    </div>
+                                    <p class="menu-item__desc">Capas de bizcocho soletilla empapadas en espresso cargado y licor de Amaretto, con rica crema de mascarpone y cocoa espolvoreada.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Panna Cotta de Frutos Rojos</span>
+                                        <span class="menu-item__price">$7</span>
+                                    </div>
+                                    <p class="menu-item__desc">Clásica panna cotta de vainilla de Madagascar, servida con un coulis tibio de moras silvestres y menta fresca.</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-item__header">
+                                        <span class="menu-item__name">Fondant de Chocolate</span>
+                                        <span class="menu-item__price">$9</span>
+                                    </div>
+                                    <p class="menu-item__desc">Bizcocho tibio de chocolate oscuro con corazón líquido de chocolate derretido, acompañado de helado de vainilla artesanal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 3. SITE FOOTER -->
+    <footer class="site-footer" id="contact">
+        <div class="site-footer__container">
+            <!-- Location column -->
+            <div class="footer-col">
+                <h3>Ubicación</h3>
+                <p>El Cocal, Sector El Paraíso</p>
+                <p>Bilwi, Puerto Cabezas, Nicaragua</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=14.0409783,-83.3643282" target="_blank" rel="noopener noreferrer" class="btn-location">
+                        Cómo llegar
+                    </a>
+                </p>
+            </div>
+            
+            <!-- Hours column -->
+            <div class="footer-col">
+                <h3>Horarios</h3>
+                <p><strong>Lunes a Viernes:</strong> 5:00 PM – 10:00 PM</p>
+                <p><strong>Sábado y Domingo:</strong> 12:00 PM – 10:00 PM</p>
+            </div>
+            
+            <!-- Social / Contact column -->
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>Teléfono: +505 8831 7051</p>
+                <p>Email: contacto@tranquilolounge.com</p>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Credits -->
+        <div class="site-footer-secondary">
+            <p>&copy; 2026 Tranquilo Lounge &amp; Dinner. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive script -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
