@@ -338,22 +338,11 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: var(--bg-img);
     background-size: cover;
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-}
-
-.gallery__item-foreground {
-    display: none; /* Oculto en movil/tablet por defecto, se usa solo cover en el elemento padre */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: inherit;
-    background-repeat: no-repeat;
 }
 
 .gallery__item.active {
@@ -388,20 +377,35 @@ p {
     }
 }
 
-/* Efecto Letterbox desenfocado para Desktop (pantallas grandes donde se corta horizontalmente) */
+/* Efecto Letterbox desenfocado para Desktop */
 @media (min-width: 992px) {
     .gallery__item {
-        filter: blur(30px) brightness(0.4);
-        transform: scale(1.15); /* Evita bordes blancos del blur */
+        background-image: none; /* el propio div ya no pinta nada directo en desktop */
     }
-    
-    .gallery__item-foreground {
-        display: block; /* Activamos el primer plano en pantallas grandes */
-        background-size: contain; /* Ajusta la foto completa vertical sin recortar */
-        background-position: center center;
-        z-index: 2; /* Por encima del fondo desenfocado */
-        filter: blur(0px) brightness(2.5); /* Deshace el blur y brightness heredados del padre */
-        transform: scale(0.87); /* Compensa el scale(1.15) del padre (1 / 1.15 ≈ 0.87) para volver a tamaño real */
+
+    .gallery__item::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: var(--bg-img);
+        background-size: cover;
+        background-position: center;
+        filter: blur(25px) brightness(0.4);
+        transform: scale(1.15); /* evita ver bordes borrosos del blur */
+        z-index: 1;
+    }
+
+    .gallery__item::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: var(--bg-img);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
     }
 }
 
