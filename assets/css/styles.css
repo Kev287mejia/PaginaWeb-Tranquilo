@@ -971,6 +971,98 @@ p {
     margin: 0 auto;
 }
 
+/* Premium Overlapping Collage Layout for Editorial Header */
+.dante-collage {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+.dante-collage .collage__item {
+    position: absolute;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transition: var(--transition-smooth);
+}
+
+.dante-collage .collage__item--main {
+    width: 72%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.dante-collage .collage__item--secondary {
+    width: 62%;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.dante-collage .dante-frame {
+    padding: 0.6rem;
+    background-color: var(--color-bg-medium);
+    border: 1px solid var(--color-gold);
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    height: auto;
+    box-shadow: none; /* Shadow handled by parent item */
+}
+
+.dante-collage .dante-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dante-collage:hover .collage__item--main {
+    transform: translate(-10px, -10px) scale(1.02);
+}
+
+.dante-collage:hover .collage__item--secondary {
+    transform: translate(10px, 10px) scale(1.03);
+}
+
+/* Triple Food Collage for Menu Header */
+.dante-collage--triple {
+    height: 520px;
+    max-width: 520px;
+}
+
+.dante-collage--triple .collage__item--left {
+    width: 52%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.dante-collage--triple .collage__item--center {
+    width: 52%;
+    right: 0;
+    top: 8%;
+    z-index: 3;
+}
+
+.dante-collage--triple .collage__item--right {
+    width: 44%;
+    left: 15%;
+    bottom: 0;
+    z-index: 4;
+}
+
+.dante-collage--triple:hover .collage__item--left {
+    transform: translate(-8px, -8px) scale(1.02);
+}
+
+.dante-collage--triple:hover .collage__item--center {
+    transform: translate(8px, -8px) scale(1.02);
+}
+
+.dante-collage--triple:hover .collage__item--right {
+    transform: translateY(8px) scale(1.03);
+}
+
 /* Mobile responsive for Editorial Header */
 @media (max-width: 768px) {
     .menu-editorial-header {
@@ -999,6 +1091,41 @@ p {
     
     .menu-editorial-header__image .dante-framed-image-container {
         max-width: 100%;
+    }
+
+    .dante-collage {
+        height: 380px;
+        max-width: 380px;
+        margin-top: 2rem;
+    }
+
+    .dante-collage .collage__item--main {
+        width: 68%;
+    }
+
+    .dante-collage .collage__item--secondary {
+        width: 58%;
+    }
+
+    .dante-collage .dante-frame {
+        padding: 0.4rem;
+    }
+
+    .dante-collage--triple {
+        height: 400px;
+        max-width: 400px;
+    }
+
+    .dante-collage--triple .collage__item--left {
+        width: 54%;
+    }
+
+    .dante-collage--triple .collage__item--center {
+        width: 54%;
+    }
+
+    .dante-collage--triple .collage__item--right {
+        width: 46%;
     }
 }
 
