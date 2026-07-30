@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! | Tranquilo Lounge and Dinner</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        .thanks-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--color-bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .thanks-page::before {
+            content: "GRACIAS";
+            position: absolute;
+            font-size: clamp(6rem, 20vw, 16rem);
+            font-family: var(--font-heading-blk);
+            color: rgba(197, 168, 128, 0.03);
+            letter-spacing: 0.5rem;
+            user-select: none;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+        .thanks-logo {
+            width: clamp(80px, 15vw, 140px);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .thanks-icon {
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            animation: thanksScale 1s ease-out;
+        }
+        .thanks-title {
+            font-family: var(--font-heading-med);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--color-cream);
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+        .thanks-text {
+            color: var(--color-cream-dim);
+            font-size: 0.95rem;
+            max-width: 460px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.3px;
+        }
+        .thanks-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-gold);
+            margin: 1.5rem auto;
+            opacity: 0.5;
+        }
+        .thanks-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @keyframes thanksScale {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="thanks-template">
+
+    <div class="thanks-page">
+        <img src="assets/images/logo_white.png" alt="Tranquilo Lounge and Dinner" class="thanks-logo">
+        <div class="thanks-icon">
+            <i class="far fa-check-circle"></i>
+        </div>
+        <h1 class="thanks-title">Solicitud Recibida</h1>
+        <div class="thanks-divider"></div>
+        <p class="thanks-text">Hemos recibido tu mensaje de solicitud para eventos. Nos pondremos en contacto contigo a la brevedad para coordinar todos los detalles de tu celebracion.</p>
+        <div class="thanks-actions">
+            <a href="index.html" class="btn">Volver al Inicio</a>
+            <a href="menu.html" class="btn btn-outline">Ver el Menu</a>
+        </div>
+    </div>
+
+</body>
+</html>
