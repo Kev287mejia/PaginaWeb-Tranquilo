@@ -1602,6 +1602,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: not-allowed;
 }
 
+/* WhatsApp Button */
+.btn-whatsapp {
+    background-color: #25D366 !important;
+    border-color: #25D366 !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E !important;
+    border-color: #128C7E !important;
+    color: #fff !important;
+    letter-spacing: 4px;
+}
+
+.btn-whatsapp::before {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+
 /* Form Messages */
 .form-message {
     text-align: center;
