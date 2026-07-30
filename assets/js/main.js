@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initHeroSlideshow();
     initMobileNav();
     initScrollReveal();
-    initMenuTabs();
 });
+
 
 /**
  * 1. Header Scroll Behavior
@@ -123,30 +123,4 @@ function initScrollReveal() {
     revealables.forEach(el => observer.observe(el));
 }
 
-/**
- * 5. Menu Categories Tab Switching
- * Toggles active class on tab content blocks on menu.html.
- */
-function initMenuTabs() {
-    const tabBtns = document.querySelectorAll(".menu-tab-btn");
-    const tabContents = document.querySelectorAll(".menu-tab-content");
 
-    if (tabBtns.length === 0 || tabContents.length === 0) return;
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const targetTab = btn.getAttribute("data-tab");
-
-            // Deactivate all buttons & hide all contents
-            tabBtns.forEach(b => b.classList.remove("active"));
-            tabContents.forEach(c => c.classList.remove("active"));
-
-            // Activate current button & show corresponding content
-            btn.classList.add("active");
-            const targetContent = document.getElementById(targetTab);
-            if (targetContent) {
-                targetContent.classList.add("active");
-            }
-        });
-    });
-}

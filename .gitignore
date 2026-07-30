@@ -1,0 +1,32 @@
+﻿# ================================================
+# TRANQUILO LOUNGE & DINNER — .gitignore
+# ================================================
+
+# --- Archivos de sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# --- Editores / IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Archivos RAW de camara (NO van en el repo web) ---
+*.CR2
+*.CR3
+*.ARW
+*.NEF
+*.RAF
+*.ORF
+*.DNG
+*.RW2
+
+# --- Carpeta de fotos originales sin procesar ---
+MENU/
+
+# --- Logs y temporales ---
+*.log
+*.tmp

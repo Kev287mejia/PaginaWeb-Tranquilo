@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celebraciones & Eventos | Tranquilo Lounge and Dinner</title>
     <meta name="description" content="Organiza tu evento privado, celebración o reunión especial en Tranquilo Lounge and Dinner, Bilwi, Nicaragua.">
+    <meta name="keywords" content="eventos privados Bilwi, cena privada Nicaragua, celebraciones tranquilo lounge, salón exclusivo Puerto Cabezas, eventos corporativos Bilwi">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kev287mejia.github.io/PaginaWeb-Tranquilo/eventos.html">
+    <meta property="og:title" content="Celebraciones &amp; Eventos | Tranquilo Lounge and Dinner">
+    <meta property="og:description" content="Haz de tu evento un recuerdo inolvidable. Salón exclusivo, menús a la medida y maridajes personalizados en Bilwi, Nicaragua.">
+    <meta property="og:image" content="https://kev287mejia.github.io/PaginaWeb-Tranquilo/assets/images/eventos_sign.webp">
+    <meta property="og:locale" content="es_NI">
+    <meta name="twitter:card" content="summary_large_image">
+
 
     <!-- Favicon – logo oficial Tranquilo -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -15,7 +26,8 @@
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="eventos-template">
+
 
     <!-- 1. FLOATING HEADER & NAVIGATION -->
     <header class="site-header" id="site-header">
@@ -58,7 +70,8 @@
         <main class="site-content__main">
 
             <!-- Hero Section (Dante Split Editorial Layout) -->
-            <section class="menu-editorial-header">
+            <section class="menu-editorial-header revealable">
+
                 <div class="menu-editorial-header__container">
                     <div class="menu-editorial-header__text">
                         <span class="menu-editorial-header__tag">Tranquilo Lounge & Dinner</span>
@@ -110,13 +123,25 @@
                 </div>
             </section>
 
-            <!-- Contact / Inquiry Form -->
             <section class="events-form-section revealable" id="form-section">
                 <div class="events-form__container">
                     <h2 class="events-form__title">Solicitar Información</h2>
                     <p class="events-form__subtitle">Cuéntanos de tu evento y nos pondremos en contacto a la brevedad.</p>
 
-                    <form class="events-form" id="events-form" novalidate>
+                    <!-- FORMSPREE: reemplaza el ACTION con tu endpoint de formspree.io -->
+                    <!-- 1. Crea cuenta en https://formspree.io -->
+                    <!-- 2. Crea un nuevo form y copia el endpoint (ej: https://formspree.io/f/XXXXXXXX) -->
+                    <!-- 3. Reemplaza "TU_ENDPOINT_FORMSPREE" por ese link -->
+                    <form class="events-form" id="events-form"
+                          action="https://formspree.io/f/TU_ENDPOINT_FORMSPREE"
+                          method="POST"
+                          novalidate>
+
+                        <!-- Campo oculto: asunto del correo -->
+                        <input type="hidden" name="_subject" value="Nueva solicitud de evento - Tranquilo Lounge">
+                        <!-- Redirigir a una página de gracias (opcional) -->
+                        <!-- <input type="hidden" name="_next" value="https://kev287mejia.github.io/PaginaWeb-Tranquilo/gracias.html"> -->
+
                         <!-- Row 1: Name + Email -->
                         <div class="form-row">
                             <div class="form-group">
@@ -169,6 +194,7 @@
 
                         <div class="form-submit-wrapper">
                             <button type="submit" class="btn events-submit-btn" id="submit-btn">
+                                <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
                                 Enviar Solicitud
                             </button>
                         </div>
@@ -176,8 +202,30 @@
                         <!-- Success / Error message -->
                         <div class="form-message" id="form-message" aria-live="polite"></div>
                     </form>
+
+                    <!-- Divider -->
+                    <div style="display:flex;align-items:center;gap:1rem;margin:2.5rem 0;opacity:0.4;">
+                        <div style="flex:1;height:1px;background:var(--color-gold);"></div>
+                        <span style="font-size:0.75rem;letter-spacing:0.2rem;color:var(--color-gold);text-transform:uppercase;">o bien</span>
+                        <div style="flex:1;height:1px;background:var(--color-gold);"></div>
+                    </div>
+
+                    <!-- WhatsApp Button -->
+                    <div style="text-align:center;">
+                        <p style="color:var(--color-cream-dim);font-size:0.9rem;margin-bottom:1.2rem;letter-spacing:0.3px;">Prefiere hablar directamente con nosotros</p>
+                        <a href="https://wa.me/50588317051?text=Hola%20Tranquilo%20Lounge!%20Me%20gustar%C3%ADa%20informarme%20sobre%20eventos%20privados.%20%F0%9F%8D%BD%EF%B8%8F"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn"
+                           style="background-color:#25D366;border-color:#25D366;color:#fff;display:inline-flex;align-items:center;gap:0.6rem;">
+                            <i class="fab fa-whatsapp" style="font-size:1.2rem;"></i>
+                            Escribir por WhatsApp
+                        </a>
+                    </div>
+
                 </div>
             </section>
+
 
         </main>
     </div>
@@ -205,9 +253,8 @@
                 <p>Teléfono: +505 8831 7051</p>
                 <p>Email: contacto@tranquilolounge.com</p>
                 <ul class="social-links">
-                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/always.tranquilo" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/search/top?q=Tranquilo+lounge+dinner" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -218,26 +265,5 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Simple form submission handler
-        document.getElementById('events-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            const msg = document.getElementById('form-message');
-
-            // Simulate sending (replace with actual backend call when available)
-            btn.textContent = 'Enviando...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.textContent = 'Enviar Solicitud';
-                btn.disabled = false;
-                msg.className = 'form-message form-message--success';
-                msg.textContent = '¡Gracias! Tu solicitud fue recibida. Te contactaremos pronto a través del correo o teléfono indicados.';
-                this.reset();
-                setTimeout(() => { msg.textContent = ''; msg.className = 'form-message'; }, 8000);
-            }, 1500);
-        });
-    </script>
 </body>
 </html>
