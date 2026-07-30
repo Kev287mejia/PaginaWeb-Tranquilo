@@ -43,6 +43,7 @@ function initHeroSlideshow() {
 
     let currentIndex = 0;
     const intervalTime = 6000; // 6 seconds per slide
+    let slideshowTimer = null;
 
     const updateHeroClass = () => {
         // Quita clases anteriores de slide y agrega la actual
@@ -50,19 +51,39 @@ function initHeroSlideshow() {
         heroSection.classList.add(`hero--slide-${currentIndex}`);
     };
 
+    const startSlideshow = () => {
+        if (slideshowTimer) return;
+        slideshowTimer = setInterval(() => {
+            // Remove active class from current slide
+            slides[currentIndex].classList.remove("active");
+
+            // Calculate next slide index
+            currentIndex = (currentIndex + 1) % slides.length;
+
+            // Add active class to next slide
+            slides[currentIndex].classList.add("active");
+            updateHeroClass();
+        }, intervalTime);
+    };
+
+    const stopSlideshow = () => {
+        if (slideshowTimer) {
+            clearInterval(slideshowTimer);
+            slideshowTimer = null;
+        }
+    };
+
     updateHeroClass(); // Estado inicial
+    startSlideshow(); // Iniciar animación
 
-    setInterval(() => {
-        // Remove active class from current slide
-        slides[currentIndex].classList.remove("active");
-
-        // Calculate next slide index
-        currentIndex = (currentIndex + 1) % slides.length;
-
-        // Add active class to next slide
-        slides[currentIndex].classList.add("active");
-        updateHeroClass();
-    }, intervalTime);
+    // Pausar/reanudar cuando la pestaña cambie de visibilidad
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stopSlideshow();
+        } else {
+            startSlideshow();
+        }
+    });
 }
 
 /**

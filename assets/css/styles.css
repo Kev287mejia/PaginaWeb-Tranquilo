@@ -1914,6 +1914,7 @@ body:not(.has-hero-intent) .site-header .site-logo__image {
 .menu-page-scroll {
     flex-grow: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding-right: 1.5rem;
     margin-bottom: 2rem;
     position: relative;
@@ -2017,24 +2018,26 @@ body:not(.has-hero-intent) .site-header .site-logo__image {
     }
 }
 
-.c-tout-overlay::before {
-    background: linear-gradient(
-        to bottom,
-        rgba(5,10,8,0.4) 0%,
-        rgba(5,10,8,0.85) 100%
-    );
+.footer-link {
+    transition: var(--transition-fast);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+    padding-bottom: 2px;
 }
 
-.site-footer a[href^="mailto"] {
-    border-bottom: 1px solid rgba(197, 168, 128, 0.3);
-    padding-bottom: 2px;
-    transition: var(--transition-fast);
-}
-.site-footer a[href^="mailto"]:hover {
-    border-bottom-color: var(--color-gold);
+.footer-link:hover {
     color: var(--color-gold);
+    border-bottom-color: var(--color-gold);
+}
+
+.form-input:focus:invalid {
+    border-color: #e57373 !important;
+}
+
+.form-input:focus:valid {
+    border-color: #81c784 !important;
 }
 
 .gallery__item {
     will-change: opacity, transform;
 }
+
