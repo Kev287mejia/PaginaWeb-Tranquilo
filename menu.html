@@ -60,221 +60,394 @@
     <!-- 2. MAIN SITE CONTENT CONTAINER -->
     <div class="site-content">
         <main class="site-content__main">
-            <!-- Hero Header for Menu Page - Chef action -->
-            <section class="menu-hero">
-                <div class="menu-hero__bg" style="background-image: url('assets/images/hero_chef_action.webp'); background-position: center 30%;"></div>
-                <div class="menu-hero__overlay"></div>
-                <div class="menu-hero__content">
-                    <h1 class="menu-hero__title">Nuestra Carta</h1>
-                    <p class="menu-hero__subtitle">Sabores pensados para desconectarse</p>
+            <!-- Hero Section (Dante Split Editorial Layout) -->
+            <section class="menu-editorial-header">
+                <div class="menu-editorial-header__container">
+                    <div class="menu-editorial-header__text">
+                        <span class="menu-editorial-header__tag">Tranquilo Lounge & Dinner</span>
+                        <h1 class="menu-editorial-header__title">Nuestra Carta</h1>
+                        <p class="menu-editorial-header__desc">
+                            Una propuesta culinaria de inspiración mediterránea con sabores auténticos de la región. Cada plato es elaborado artesanalmente con técnicas contemporáneas y productos locales frescos.
+                        </p>
+                        <div class="menu-editorial-header__line"></div>
+                    </div>
+                    <div class="menu-editorial-header__image">
+                        <div class="dante-framed-image-container">
+                            <div class="dante-frame">
+                                <img src="assets/images/hero_chef_action.webp" alt="Nuestro Chef en Acción">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Menu Content Section -->
             <section class="menu-details">
                 <div class="menu-details__container">
-                    <!-- Category Tabs -->
+                    <!-- Category Tabs (Book Chapters) -->
                     <div class="menu-tabs">
-                        <button class="menu-tab-btn active" data-tab="comida">Comida</button>
-                        <button class="menu-tab-btn" data-tab="bebidas">Bebidas &amp; Cócteles</button>
-                        <button class="menu-tab-btn" data-tab="postres">Postres</button>
+                        <button class="menu-book-tab active" id="btn-cover" onclick="goToPage(0)">Portada</button>
+                        <button class="menu-book-tab" id="btn-comida" onclick="goToPage(1)">Comida</button>
+                        <button class="menu-book-tab" id="btn-bebidas" onclick="goToPage(5)">Bebidas</button>
+                        <button class="menu-book-tab" id="btn-postres" onclick="goToPage(6)">Postres</button>
                     </div>
 
-                    <!-- TAB 1: COMIDA -->
-                    <div class="menu-tab-content active" id="comida">
-
-                        <!-- Feature photo for food section -->
-                        <div class="menu-photo-feature">
-                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/food_soup.webp');"></div>
-                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/food_shrimp.webp');"></div>
-                        </div>
-
-                        <!-- Group 1: Entradas -->
-                        <div class="menu-group">
-                            <h2 class="menu-group__title">Entradas</h2>
-                            <div class="menu-grid">
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Focaccia de la Casa</span>
-                                        <span class="menu-item__price">$8</span>
-                                    </div>
-                                    <p class="menu-item__desc">Pan italiano recién horneado con romero, aceite de oliva virgen extra y sal marina gris.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Carpaccio de Res</span>
-                                        <span class="menu-item__price">$14</span>
-                                    </div>
-                                    <p class="menu-item__desc">Finas láminas de lomo de res, alcaparras baby, arúgula fresca, virutas de parmesano y aderezo de limón.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Burrata &amp; Prosciutto</span>
-                                        <span class="menu-item__price">$16</span>
-                                    </div>
-                                    <p class="menu-item__desc">Cremosa burrata artesanal acompañada de jamón prosciutto di Parma, higos frescos y reducción de balsámico.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Calamares Fritti</span>
-                                        <span class="menu-item__price">$12</span>
-                                    </div>
-                                    <p class="menu-item__desc">Calamares crujientes con un toque de ralladura de limón, servidos con alioli de ajo asado.</p>
+                    <!-- The 3D Book Container -->
+                    <div class="menu-book-wrapper">
+                        <div class="menu-book">
+                            
+                            <!-- Page 1: Portada (Cover) -->
+                            <div class="menu-book-page" id="page-cover" style="z-index: 7;">
+                                <div class="menu-cover-content">
+                                    <img src="assets/images/logo_black.png" alt="Tranquilo Logo" class="menu-cover-logo" style="max-width: 250px; margin: 0 auto 1.5rem; filter: brightness(0.1);">
+                                    <h1 class="menu-cover-title" style="font-family: var(--font-heading-blk); font-size: 2.8rem; letter-spacing: 5px; color: var(--color-gold-dark); margin-bottom: 2.5rem; text-transform: uppercase;">Nuestra Carta</h1>
+                                    <div class="menu-cover-decor" style="width: 80px; height: 1px; background: var(--color-gold-dark); margin: 0 auto 2.5rem; opacity: 0.6;"></div>
+                                    <button class="book-turn-btn" onclick="goToPage(1)">Hojear Menú &rarr;</button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Divider decoration -->
-                        <div class="menu-divider"></div>
+                            <!-- Page 2: Entradas & Ensaladas -->
+                            <div class="menu-book-page" id="page-comida-1" style="z-index: 6;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Entradas &amp; Ensaladas</h2>
+                                    <p class="menu-page-subtitle">Para empezar a disfrutar</p>
+                                </div>
+                                
+                                <div class="menu-page-scroll">
+                                    <div class="menu-group" style="margin-bottom: 2rem;">
+                                        <h3 class="menu-group__title">Entradas</h3>
+                                        <div class="menu-item">
+                                            <div class="menu-item__header">
+                                                <span class="menu-item__name">Escogido por el Chef</span>
+                                                <span class="menu-item__price">-</span>
+                                            </div>
+                                            <p class="menu-item__desc">Selección exclusiva de la casa en función de los ingredientes más frescos disponibles y la temporada.</p>
+                                        </div>
+                                    </div>
 
-                        <!-- Group 2: Fuertes -->
-                        <div class="menu-group">
-                            <h2 class="menu-group__title">Platos Fuertes</h2>
-                            <div class="menu-grid">
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Ribeye a la Parrilla</span>
-                                        <span class="menu-item__price">$34</span>
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Ensaladas Frescas</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Fiesta Beef Salad</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Sabores del campo con tierna carne de res a la plancha, lechuga, tomate fresco y aderezo de la casa.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Ensalada César</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Lechugas crujientes, aderezo César artesanal, crutones dorados al ajo y queso parmesano rallado.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="menu-item__desc">Corte de ribeye premium de 12oz, sellado a la parrilla, acompañado de papas trufadas y mantequilla de hierbas.</p>
                                 </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Salmón Sellado</span>
-                                        <span class="menu-item__price">$26</span>
-                                    </div>
-                                    <p class="menu-item__desc">Filete de salmón fresco sobre cama de puré de coliflor trufado, espárragos asados y salsa virgen de tomate.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Pappardelle al Ragú de Ternera</span>
-                                        <span class="menu-item__price">$22</span>
-                                    </div>
-                                    <p class="menu-item__desc">Pasta pappardelle artesanal con ragú de ternera cocido a fuego lento durante 8 horas con vino tinto y romero.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Risotto de Hongos Silvestres</span>
-                                        <span class="menu-item__price">$20</span>
-                                    </div>
-                                    <p class="menu-item__desc">Arroz arborio cremoso con una mezcla de hongos de temporada, aceite de trufa blanca y queso pecorino romano.</p>
+
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(0)">&larr; Portada</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(2)">Especialidades de Pollo &rarr;</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- TAB 2: BEBIDAS -->
-                    <div class="menu-tab-content" id="bebidas">
+                            <!-- Page 3: Pollo -->
+                            <div class="menu-book-page" id="page-comida-2" style="z-index: 5;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Pollo</h2>
+                                    <p class="menu-page-subtitle">Acompañados de puré de papa, vegetales salteados y ensalada</p>
+                                </div>
+                                
+                                <div class="menu-page-scroll">
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Especialidades de Pollo</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Filete de Pollo a la Meunière</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Pechuga de pollo tierna y jugosa bañada en una salsa meunière clásica de mantequilla, limón y perejil.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Milanesa de Pollo</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Empanizada hasta la perfección, dorada y crujiente por fuera, jugosa y tierna por dentro.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Filete de Pollo en Salsa Jalapeño</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Pechuga de pollo al grill bañada en nuestra cremosa y ligeramente picante salsa de jalapeño casera.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <!-- Feature photo for drinks section -->
-                        <div class="menu-photo-feature">
-                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/drink_strawberry.webp');"></div>
-                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/drink_green.webp');"></div>
-                        </div>
-
-                        <!-- Group 1: Signature -->
-                        <div class="menu-group">
-                            <h2 class="menu-group__title">Cócteles de Autor</h2>
-                            <div class="menu-grid">
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Tranquilo Spritz</span>
-                                        <span class="menu-item__price">$12</span>
-                                    </div>
-                                    <p class="menu-item__desc">Aperol infusionado con fresas frescas, Prosecco D.O.C., agua con gas premium y rodaja de naranja deshidratada.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Paraíso Mezcal</span>
-                                        <span class="menu-item__price">$14</span>
-                                    </div>
-                                    <p class="menu-item__desc">Mezcal joven artesanal, extracto de piña asada, jarabe de jalapeño casero, zumo de lima y borde de sal de gusano.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Negroni Cocal</span>
-                                        <span class="menu-item__price">$13</span>
-                                    </div>
-                                    <p class="menu-item__desc">Ginebra premium, Campari, vermut dulce macerado con granos de café tostados localmente y cáscara de naranja.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Basil &amp; Gin Smash</span>
-                                        <span class="menu-item__price">$12</span>
-                                    </div>
-                                    <p class="menu-item__desc">Ginebra infusionada con pepino, hojas de albahaca fresca machacadas, zumo de limón real y jarabe simple.</p>
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(1)">&larr; Entradas</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(3)">Pastas Artesanales &rarr;</button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Divider decoration -->
-                        <div class="menu-divider"></div>
+                            <!-- Page 4: Pastas -->
+                            <div class="menu-book-page" id="page-comida-3" style="z-index: 4;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Pastas</h2>
+                                    <p class="menu-page-subtitle">Sabor artesanal tradicional</p>
+                                </div>
+                                
+                                <div class="menu-page-scroll">
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Pastas Artesanales</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Pasta Carbonara</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Receta italiana con tocino crocante, crema suave de yema de huevo y abundante parmesano.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Pasta Alfredo</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Nuestra clásica salsa cremosa a base de mantequilla y queso parmesano con un sutil aroma a ajo.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Pasta Frutos del Mar</span>
+                                                    <span class="menu-item__price">600</span>
+                                                </div>
+                                                <p class="menu-item__desc">Una exquisita selección de mariscos locales salteados con hierbas en salsa pomodoro o crema.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <!-- Group 2: Wine / Classics -->
-                        <div class="menu-group">
-                            <h2 class="menu-group__title">Vinos &amp; Cervezas</h2>
-                            <div class="menu-grid">
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Tempranillo, España</span>
-                                        <span class="menu-item__price">$9 / $40</span>
-                                    </div>
-                                    <p class="menu-item__desc">Copa o botella. Notas de frutos rojos maduros, roble sutil y final redondo.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Sauvignon Blanc, Chile</span>
-                                        <span class="menu-item__price">$8 / $36</span>
-                                    </div>
-                                    <p class="menu-item__desc">Copa o botella. Fresco, cítrico, notas de maracuyá y acidez vibrante equilibrada.</p>
-                                </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Cerveza Artesanal Local</span>
-                                        <span class="menu-item__price">$6</span>
-                                    </div>
-                                    <p class="menu-item__desc">Pregunta a tu mesero por nuestra selección rotativa de cervezas de barril y botella.</p>
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(2)">&larr; Pollo</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(4)">Especialidades de Cerdo &rarr;</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- TAB 3: POSTRES -->
-                    <div class="menu-tab-content" id="postres">
-
-                        <!-- Feature photo for desserts section -->
-                        <div class="menu-photo-feature menu-photo-feature--single">
-                            <div class="menu-photo-feature__image" style="background-image: url('assets/images/ambience_friends.webp');"></div>
-                        </div>
-
-                        <div class="menu-group">
-                            <h2 class="menu-group__title">Postres Especiales</h2>
-                            <div class="menu-grid">
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Tiramisú de la Casa</span>
-                                        <span class="menu-item__price">$8</span>
-                                    </div>
-                                    <p class="menu-item__desc">Capas de bizcocho soletilla empapadas en espresso cargado y licor de Amaretto, con rica crema de mascarpone y cocoa espolvoreada.</p>
+                            <!-- Page 5: Cerdo -->
+                            <div class="menu-book-page" id="page-comida-4" style="z-index: 3;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Cerdo</h2>
+                                    <p class="menu-page-subtitle">Acompañados de puré de papa, vegetales salteados y ensalada</p>
                                 </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Panna Cotta de Frutos Rojos</span>
-                                        <span class="menu-item__price">$7</span>
+                                
+                                <div class="menu-page-scroll">
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Especialidades de Cerdo</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Lomo de Cerdo al Grill</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Medallones de lomo de cerdo seleccionados, sellados al grill en su punto justo de jugosidad.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Chuleta de Cerdo BBQ</span>
+                                                    <span class="menu-item__price">460</span>
+                                                </div>
+                                                <p class="menu-item__desc">Chuleta de cerdo marinada y cocida a la parrilla, bañada en nuestra salsa barbacoa artesanal.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Costillas de Cerdo BBQ</span>
+                                                    <span class="menu-item__price">600</span>
+                                                </div>
+                                                <p class="menu-item__desc">Costillar tierno cocinado a fuego lento hasta desprenderse del hueso, glaseado con salsa BBQ de la casa.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="menu-item__desc">Clásica panna cotta de vainilla de Madagascar, servida con un coulis tibio de moras silvestres y menta fresca.</p>
                                 </div>
-                                <div class="menu-item">
-                                    <div class="menu-item__header">
-                                        <span class="menu-item__name">Fondant de Chocolate</span>
-                                        <span class="menu-item__price">$9</span>
-                                    </div>
-                                    <p class="menu-item__desc">Bizcocho tibio de chocolate oscuro con corazón líquido de chocolate derretido, acompañado de helado de vainilla artesanal.</p>
+
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(3)">&larr; Pastas</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(5)">Bebidas &rarr;</button>
                                 </div>
                             </div>
+
+                            <!-- Page 5: Bebidas (Vinos, Cervezas & Refrescos) -->
+                            <div class="menu-book-page" id="page-bebidas" style="z-index: 2;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Bebidas</h2>
+                                    <p class="menu-page-subtitle">Vinos, cervezas y refrescos para acompañar</p>
+                                </div>
+
+                                <div class="menu-page-scroll">
+                                    <!-- Vinos & Cervezas -->
+                                    <div class="menu-group" style="margin-bottom: 2rem;">
+                                        <h3 class="menu-group__title">Vinos &amp; Cervezas</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Tempranillo, España</span>
+                                                    <span class="menu-item__price">$9 / $40</span>
+                                                </div>
+                                                <p class="menu-item__desc">Copa o botella. Notas de frutos rojos maduros, roble sutil y final redondo.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Sauvignon Blanc, Chile</span>
+                                                    <span class="menu-item__price">$8 / $36</span>
+                                                </div>
+                                                <p class="menu-item__desc">Copa o botella. Fresco, cítrico, notas de maracuyá y acidez vibrante equilibrada.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Cerveza Artesanal Local</span>
+                                                    <span class="menu-item__price">$6</span>
+                                                </div>
+                                                <p class="menu-item__desc">Pregunta a tu mesero por nuestra selección rotativa de cervezas de barril y botella.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Cervezas Nacionales</span>
+                                                    <span class="menu-item__price">$4</span>
+                                                </div>
+                                                <p class="menu-item__desc">Toña, Victoria Clásica o Victoria Frost bien heladas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sin Alcohol -->
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Refrescos &amp; Café</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Limonada con Menta</span>
+                                                    <span class="menu-item__price">$4</span>
+                                                </div>
+                                                <p class="menu-item__desc">Fresca limonada natural preparada al instante con hojas de menta orgánica.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Licuados Naturales</span>
+                                                    <span class="menu-item__price">$4</span>
+                                                </div>
+                                                <p class="menu-item__desc">De frutas de temporada (calala, piña, sandía) licuadas al instante.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Gaseosas &amp; Agua</span>
+                                                    <span class="menu-item__price">$3</span>
+                                                </div>
+                                                <p class="menu-item__desc">Coca-Cola, Fanta, Sprite o botella de agua purificada.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(4)">&larr; Cerdo</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(6)">Postres &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Page 6: Postres -->
+                            <div class="menu-book-page" id="page-postres" style="z-index: 1;">
+                                <div class="menu-page-header">
+                                    <h2 class="menu-page-title">Postres</h2>
+                                    <p class="menu-page-subtitle">El broche de oro de la cena</p>
+                                </div>
+
+                                <div class="menu-page-scroll">
+                                    <div class="menu-group">
+                                        <h3 class="menu-group__title">Postres Especiales</h3>
+                                        <div class="menu-grid">
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Tiramisú de la Casa</span>
+                                                    <span class="menu-item__price">$8</span>
+                                                </div>
+                                                <p class="menu-item__desc">Capas de bizcocho soletilla empapadas en espresso cargado y licor de Amaretto, con rica crema de mascarpone y cocoa espolvoreada.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Panna Cotta de Frutos Rojos</span>
+                                                    <span class="menu-item__price">$7</span>
+                                                </div>
+                                                <p class="menu-item__desc">Clásica panna cotta de vainilla de Madagascar, servida con un coulis tibio de moras silvestres y menta fresca.</p>
+                                            </div>
+                                            <div class="menu-item">
+                                                <div class="menu-item__header">
+                                                    <span class="menu-item__name">Fondant de Chocolate</span>
+                                                    <span class="menu-item__price">$9</span>
+                                                </div>
+                                                <p class="menu-item__desc">Bizcocho tibio de chocolate oscuro con corazón líquido de chocolate derretido, acompañado de helado de vainilla artesanal.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-page-footer">
+                                    <button class="book-nav-btn prev" onclick="goToPage(5)">&larr; Bebidas</button>
+                                    <button class="book-nav-btn next" onclick="goToPage(0)">Portada &rarr;</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
+                <!-- Custom Book Controller Script -->
+                <script>
+                    function goToPage(pageIndex) {
+                        const pages = [
+                            document.getElementById('page-cover'),
+                            document.getElementById('page-comida-1'),
+                            document.getElementById('page-comida-2'),
+                            document.getElementById('page-comida-3'),
+                            document.getElementById('page-comida-4'),
+                            document.getElementById('page-bebidas'),
+                            document.getElementById('page-postres')
+                        ];
+                        
+                        const btns = [
+                            document.getElementById('btn-cover'),
+                            document.getElementById('btn-comida'),
+                            document.getElementById('btn-bebidas'),
+                            document.getElementById('btn-postres')
+                        ];
+
+                        // Update buttons active class
+                        btns.forEach(btn => {
+                            if (btn) btn.classList.remove('active');
+                        });
+
+                        if (pageIndex === 0 && document.getElementById('btn-cover')) {
+                            document.getElementById('btn-cover').classList.add('active');
+                        } else if (pageIndex >= 1 && pageIndex <= 4 && document.getElementById('btn-comida')) {
+                            document.getElementById('btn-comida').classList.add('active');
+                        } else if (pageIndex === 5 && document.getElementById('btn-bebidas')) {
+                            document.getElementById('btn-bebidas').classList.add('active');
+                        } else if (pageIndex === 6 && document.getElementById('btn-postres')) {
+                            document.getElementById('btn-postres').classList.add('active');
+                        }
+
+                        pages.forEach((page, idx) => {
+                            if (page) {
+                                if (idx < pageIndex) {
+                                    page.classList.add('flipped');
+                                } else {
+                                    page.classList.remove('flipped');
+                                }
+                            }
+                        });
+                    }
+                </script>
             </section>
         </main>
     </div>
